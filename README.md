@@ -65,7 +65,7 @@ for s in 180 192 512; do rsvg-convert -w $s -h $s assets/favicon.svg -o assets/i
 - **商号**: 「**アリオノート合同会社**」— カタカナ表記で登記する方針（英文 ARIONAUT LLC、ドメインと
   ロゴのワードマーク `ARIONAUT` は変更なし）
 - **タグライン**: `EXPLORE, INNOVATE, DISCOVER`。ロゴからは商号表記を外し、タグラインに差し替えた
-- **問い合わせ先**: `info@arionaut.com`（Google Workspace で `matsuzaki@arionaut.com` とあわせて開設予定）
+- **問い合わせ先**: `info@arionaut.com`（2026-08-25 確定。Google Workspace で開設予定）
 - **スローガン**: 「新しい“道”を拓く」で確定。PATHFINDER LABS 時代からの継承で、「航路」案は不採用
 - **設立**: 2027年1月4日（予定）のまま据え置き
 - **pf-labs.org**: 廃止する方針
