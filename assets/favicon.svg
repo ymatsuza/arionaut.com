@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Arionaut">
+  <defs>
+    <linearGradient id="bg" gradientUnits="userSpaceOnUse" x1="0" y1="256" x2="256" y2="0">
+      <stop offset="0" stop-color="#0a2f70"/><stop offset="1" stop-color="#1b62c0"/>
+    </linearGradient>
+    <linearGradient id="fst" gradientUnits="userSpaceOnUse" x1="176" y1="88" x2="228" y2="36">
+      <stop offset="0" stop-color="#ef8117"/><stop offset="1" stop-color="#f8b64d"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#bg)"/>
+  <g transform="translate(-6,50) scale(0.86)">
+    <polygon points="52,182 226,38 132,148" fill="#ffffff"/>
+    <polygon points="132,148 226,38 168,186 140,158" fill="#b9d9f6"/>
+  </g>
+  <polygon points="202,34 209.4,54.6 230,62 209.4,69.4 202,90 194.6,69.4 174,62 194.6,54.6" fill="url(#fst)"/>
+</svg>

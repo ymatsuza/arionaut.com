@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 556 140" role="img" aria-label="ARIONAUT">
+  <defs>
+    <linearGradient id="lw1" gradientUnits="userSpaceOnUse" x1="40" y1="190" x2="220" y2="40">
+      <stop offset="0" stop-color="#1b62c0"/><stop offset="1" stop-color="#48a3ec"/>
+    </linearGradient>
+    <linearGradient id="lw2" gradientUnits="userSpaceOnUse" x1="120" y1="200" x2="230" y2="40">
+      <stop offset="0" stop-color="#0c3a86"/><stop offset="1" stop-color="#1b62c0"/>
+    </linearGradient>
+    <linearGradient id="lsp" gradientUnits="userSpaceOnUse" x1="20" y1="200" x2="150" y2="120">
+      <stop offset="0" stop-color="#8ec4ef"/><stop offset="1" stop-color="#2f74c4"/>
+    </linearGradient>
+    <linearGradient id="lst" gradientUnits="userSpaceOnUse" x1="250" y1="34" x2="284" y2="0">
+      <stop offset="0" stop-color="#ef8117"/><stop offset="1" stop-color="#f8b64d"/>
+    </linearGradient>
+    <linearGradient id="lwm" gradientUnits="userSpaceOnUse" x1="170" y1="0" x2="650" y2="0">
+      <stop offset="0" stop-color="#0d3c85"/><stop offset="1" stop-color="#1e74d8"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(4,18) scale(0.4348)">
+    <polyline points="24,196 74,148 108,168" stroke="url(#lsp)" stroke-width="13" fill="none"
+              stroke-linejoin="miter" stroke-miterlimit="12" opacity="0.85"/>
+    <polygon points="52,182 226,38 132,148" fill="url(#lw1)"/>
+    <polygon points="132,148 226,38 168,186 140,158" fill="url(#lw2)"/>
+    <polygon points="267,2 271.5,14.5 284,19 271.5,23.5 267,36 262.5,23.5 250,19 262.5,14.5" fill="url(#lst)"/>
+  </g>
+  <text x="168" y="94" font-family="Montserrat, 'Helvetica Neue', Arial, sans-serif"
+        font-weight="900" font-size="66" letter-spacing="3.96" fill="url(#lwm)">ARIONAUT</text>
+</svg>

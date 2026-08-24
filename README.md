@@ -1,0 +1,69 @@
+# arionaut.com
+
+Arionaut合同会社（ARIONAUT LLC）のコーポレートサイトとブランド資産。
+
+- 本番: https://arionaut.com/ （GitHub Pages、`main` ブランチのルートを配信）
+- ビルド工程なし。静的HTML/CSSのみ。
+
+## 構成
+
+```
+index.html            トップページ
+privacy.html          プライバシーポリシー
+404.html              404ページ
+CNAME                 GitHub Pages 独自ドメイン設定（arionaut.com）
+.nojekyll             Jekyll 処理を無効化
+robots.txt / sitemap.xml / site.webmanifest
+assets/
+  style.css           サイト共通CSS（index / privacy / 404 で共有）
+  favicon.svg .ico    ファビコン
+  apple-touch-icon.png / icon-192.png / icon-512.png
+  ogp.png             OGP画像 1200×630
+brand/
+  logo-mark.svg           ロゴマーク（マスター・カラー）
+  logo-mark-compact.svg   同上・スピードライン省略版（小サイズ用）
+  logo-mark-white.svg     白抜き版（ダーク背景用）
+  logo-lockup.svg         マーク＋ワードマークのロックアップ
+  ogp.svg                 OGP画像のソース
+  qr-navy.svg / .png      QRコード（https://arionaut.com/ 宛）
+  namecard/               名刺入稿データ（HTML / PDF）
+  BRAND.md                デザイントークン・使用ルール
+docs/
+  DNS.md                  独自ドメイン（お名前.com）の設定手順
+  HANDOFF.md              ブランド立ち上げ時のハンドオフ資料（経緯・商標調査）
+```
+
+## ローカルでの確認
+
+```bash
+python3 -m http.server 8000
+# http://localhost:8000/
+```
+
+`index.html` を直接ブラウザで開いても表示できるが、`site.webmanifest` などルート相対の
+参照があるためローカルサーバー経由での確認を推奨する。
+
+## デプロイ
+
+`main` に push すると GitHub Pages が自動で反映する（数十秒〜数分）。
+
+## 素材の再生成
+
+```bash
+# QRコード
+python3 -c "import segno; segno.make('https://arionaut.com/', error='q').save('brand/qr-navy.svg', border=4, dark='#0c3a86', light='#ffffff', omitsize=True)"
+
+# OGP画像（Montserrat が必要）
+rsvg-convert -w 1200 -h 630 brand/ogp.svg -o assets/ogp.png
+
+# ファビコン
+for s in 180 192 512; do rsvg-convert -w $s -h $s assets/favicon.svg -o assets/icon-$s.png; done
+```
+
+## 未確定・TODO
+
+- `matsuzaki@arionaut.com` は仮。arionaut.com のMXレコード未設定のため**現時点では受信できない**
+- スローガン「新しい“航路”を拓く」は旧「新しい“道”を拓く」からの変更案（未承認）。
+  変更する場合は `index.html` の `<title>` / hero `<h1>`、`brand/ogp.svg`（→`assets/ogp.png` 再生成）、
+  名刺裏面の3箇所を直す
+- pf-labs.org からの移行方針（リダイレクト／併存）は未決定

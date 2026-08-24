@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 230" role="img" aria-label="Arionaut">
+  <polyline points="24,196 74,148 108,168" stroke="#ffffff" stroke-width="13" fill="none"
+            stroke-linejoin="miter" stroke-miterlimit="12" opacity="0.75"/>
+  <polygon points="52,182 226,38 132,148" fill="#ffffff"/>
+  <polygon points="132,148 226,38 168,186 140,158" fill="#cfe4f7"/>
+  <polygon points="267,2 271.5,14.5 284,19 271.5,23.5 267,36 262.5,23.5 250,19 262.5,14.5" fill="#f8b64d"/>
+</svg>

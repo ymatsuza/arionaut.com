@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Arionaut合同会社 名刺データ</title>
+<style>
+/* ==================================================================
+   名刺データ Arionaut合同会社
+   仕上がり 91 × 55mm（日本標準・4号） / 塗り足し 3mm / 安全余白 4mm
+   印刷面付け: 97 × 61mm を 1ページ 1面、計 2ページ（表・裏）
+   ================================================================== */
+
+:root{
+  --navy:   #0c3a86;   /* ロゴのグラデ始点 */
+  --mid:    #1b62c0;
+  --cyan:   #48a3ec;
+  --orange: #ef8f27;   /* ロゴの星 */
+  --ink:    #1f2933;
+  --muted:  #616e7c;
+  --paper:  #ffffff;
+
+  --trim-w: 91mm;
+  --trim-h: 55mm;
+  --bleed:  3mm;
+  --safe:   4mm;       /* 仕上がり線からの安全余白 */
+
+  --jp: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium",
+        "Yu Gothic", "Noto Sans JP", "Meiryo", sans-serif;
+  --en: "Helvetica Neue", "Arial", "Noto Sans", sans-serif;
+}
+
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ------------------------------------------------------------ 台紙 */
+body{
+  background: #59626b;
+  font-family: var(--jp);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* --------------------------------------------------- カード本体 */
+.card{
+  position: relative;
+  width:  calc(var(--trim-w) + var(--bleed) * 2);   /* 97mm */
+  height: calc(var(--trim-h) + var(--bleed) * 2);   /* 61mm */
+  overflow: hidden;
+  background: var(--paper);
+  padding: var(--bleed);
+}
+
+.trim{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 画面確認用のガイド（印刷では消える） */
+.guide{
+  position: absolute;
+  inset: var(--bleed);
+  pointer-events: none;
+  outline: 0.2mm dashed rgba(255,0,0,.55);   /* 仕上がり線 */
+  z-index: 90;
+}
+.guide::after{
+  content: "";
+  position: absolute;
+  inset: var(--safe);
+  outline: 0.2mm dashed rgba(0,140,255,.5);  /* 安全余白 */
+}
+
+/* ============================================================ 表面 */
+.front{ background: var(--paper); }
+
+/* 右端の全断ちアクセント（ロゴのグラデーションを引用） */
+.front .edge{
+  position: absolute;
+  top:   calc(var(--bleed) * -1);
+  right: calc(var(--bleed) * -1);
+  width:  calc(2.6mm + var(--bleed));
+  height: calc(100% + var(--bleed) * 2);
+  background: linear-gradient(180deg, var(--navy) 0%, var(--mid) 55%, var(--cyan) 100%);
+}
+
+.front .inner{
+  position: absolute;
+  inset: var(--safe);
+  right: calc(var(--safe) + 3.4mm);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- 社名ロックアップ --- */
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 2.4mm;
+}
+.brand .mark{ width: 12.5mm; flex: none; display: block; }
+.brand .names{ display: flex; flex-direction: column; gap: 0.5mm; }
+.brand .ja{
+  font-size: 8.2pt;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--navy);
+  line-height: 1.1;
+}
+.brand .en{
+  font-family: var(--en);
+  font-size: 5.1pt;
+  font-weight: 600;
+  letter-spacing: .17em;
+  color: var(--muted);
+  line-height: 1.1;
+}
+
+/* --- 氏名 --- */
+.person{ margin-top: auto; margin-bottom: auto; }
+.person .rule{
+  width: 7mm;
+  height: 0.6mm;
+  background: var(--orange);
+  margin-bottom: 2.2mm;
+}
+.person .title{
+  font-size: 6.6pt;
+  letter-spacing: .12em;
+  color: var(--muted);
+  margin-bottom: 1.2mm;
+}
+.person .name{
+  font-size: 14pt;
+  font-weight: 600;
+  letter-spacing: .1em;
+  color: var(--ink);
+  line-height: 1;
+}
+.person .romaji{
+  font-family: var(--en);
+  font-size: 5.6pt;
+  letter-spacing: .16em;
+  color: var(--muted);
+  margin-top: 1.4mm;
+  text-transform: uppercase;
+}
+
+/* --- 連絡先 --- */
+.contact{
+  border-top: 0.2mm solid #d8dde2;
+  padding-top: 1.8mm;
+  font-size: 6.2pt;
+  line-height: 1.62;
+  color: var(--ink);
+  letter-spacing: .01em;
+}
+.contact .label{
+  display: inline-block;
+  width: 8.5mm;
+  color: var(--muted);
+  font-family: var(--en);
+  font-size: 5.4pt;
+  letter-spacing: .1em;
+}
+.contact .addr{ color: var(--muted); }
+
+/* ============================================================ 裏面 */
+.back{ background: var(--navy); color: #fff; }
+.back .bg{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(118deg, #082a63 0%, var(--navy) 46%, #1b62c0 100%);
+}
+.back .inner{
+  position: absolute;
+  inset: var(--safe);
+  display: flex;
+  flex-direction: column;
+}
+
+.back .brand-row{
+  display: flex;
+  align-items: center;
+  gap: 2.2mm;
+}
+.back .brand-row .mark{ width: 9.5mm; flex: none; display: block; }
+.back .brand-row .en{
+  font-family: var(--en);
+  font-size: 5.6pt;
+  font-weight: 600;
+  letter-spacing: .2em;
+  color: rgba(255,255,255,.9);
+}
+
+.back .body{
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 4mm;
+}
+
+.back .copy{ flex: 1; }
+
+/* --- スローガン（裏面の主役） --- */
+.back .slogan{
+  font-size: 11.5pt;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: .1em;
+  color: #fff;
+  white-space: nowrap;
+}
+.back .slogan-rule{
+  width: 8mm;
+  height: 0.6mm;
+  background: var(--orange);
+  margin: 2mm 0;
+}
+.back .tagline{
+  font-size: 5.9pt;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: .02em;
+  color: rgba(255,255,255,.82);
+  margin-bottom: 2.6mm;
+}
+.back .pillars{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4mm 2mm;
+}
+.back .pillars li{
+  font-size: 5.9pt;
+  letter-spacing: .06em;
+  padding: 0.9mm 2mm;
+  border: 0.2mm solid rgba(255,255,255,.42);
+  border-radius: 6mm;
+  color: rgba(255,255,255,.95);
+  white-space: nowrap;
+}
+
+/* --- QR パネル（白地・ネイビーモジュール／反転させない） --- */
+.qr{
+  flex: none;
+  text-align: center;
+}
+.qr .panel{
+  width: 18mm;
+  height: 18mm;
+  background: #fff;
+  border-radius: 1mm;
+  padding: 0;   /* クワイエットゾーンは SVG 内に 4 モジュール分含む */
+  display: block;
+}
+.qr .panel svg{ width: 100%; height: 100%; display: block; }
+.qr .url{
+  font-family: var(--en);
+  font-size: 5pt;
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.88);
+  margin-top: 1.2mm;
+}
+
+/* ======================================================== 画面用UI */
+.sheet-label{
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: .08em;
+  align-self: flex-start;
+  margin-bottom: -14px;
+}
+.note{
+  max-width: 97mm;
+  background: #fff;
+  border-radius: 6px;
+  padding: 16px 18px;
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+.note h2{ font-size: 13px; color: var(--navy); margin-bottom: 8px; }
+.note ul{ padding-left: 1.1em; }
+.note code{
+  background: #eef1f4;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-size: 11px;
+}
+
+/* ========================================================== 印刷時 */
+@page{
+  size: 97mm 61mm;
+  margin: 0;
+}
+@media print{
+  body{
+    background: #fff;
+    padding: 0;
+    gap: 0;
+    display: block;
+  }
+  .sheet-label, .note, .guide{ display: none !important; }
+  .card{
+    page-break-after: always;
+    break-after: page;
+  }
+  .card:last-of-type{
+    page-break-after: auto;
+    break-after: auto;
+  }
+  *{
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- =============================================== 表面（和文） -->
+<p class="sheet-label">表面 — 和文 / 91×55mm + 塗り足し3mm</p>
+<div class="card front">
+  <div class="guide"></div>
+  <div class="edge"></div>
+  <div class="trim">
+    <div class="inner">
+
+      <div class="brand">
+        <svg class="mark" viewBox="0 0 300 230" role="img" aria-label="Arionaut">
+          <defs>
+            <linearGradient id="fw1" gradientUnits="userSpaceOnUse" x1="40" y1="190" x2="220" y2="40">
+              <stop offset="0" stop-color="#1b62c0"/><stop offset="1" stop-color="#48a3ec"/>
+            </linearGradient>
+            <linearGradient id="fw2" gradientUnits="userSpaceOnUse" x1="120" y1="200" x2="230" y2="40">
+              <stop offset="0" stop-color="#0c3a86"/><stop offset="1" stop-color="#1b62c0"/>
+            </linearGradient>
+            <linearGradient id="fsp" gradientUnits="userSpaceOnUse" x1="20" y1="200" x2="150" y2="120">
+              <stop offset="0" stop-color="#8ec4ef"/><stop offset="1" stop-color="#2f74c4"/>
+            </linearGradient>
+            <linearGradient id="fst" gradientUnits="userSpaceOnUse" x1="250" y1="34" x2="284" y2="0">
+              <stop offset="0" stop-color="#ef8117"/><stop offset="1" stop-color="#f8b64d"/>
+            </linearGradient>
+          </defs>
+          <polyline points="24,196 74,148 108,168" stroke="url(#fsp)" stroke-width="13" fill="none" stroke-linejoin="miter" stroke-miterlimit="12" opacity="0.85"/>
+          <polygon points="52,182 226,38 132,148" fill="url(#fw1)"/>
+          <polygon points="132,148 226,38 168,186 140,158" fill="url(#fw2)"/>
+          <polygon points="267,2 271.5,14.5 284,19 271.5,23.5 267,36 262.5,23.5 250,19 262.5,14.5" fill="url(#fst)"/>
+        </svg>
+        <span class="names">
+          <span class="ja">Arionaut合同会社</span>
+          <span class="en">ARIONAUT LLC</span>
+        </span>
+      </div>
+
+      <div class="person">
+        <div class="rule"></div>
+        <div class="title">代表社員</div>
+        <div class="name">松崎 雄太</div>
+        <div class="romaji">Yuta Matsuzaki</div>
+      </div>
+
+      <div class="contact">
+        <div class="addr"><span class="label">〒</span>300-2635 茨城県つくば市東光台3-21-7</div>
+        <div><span class="label">TEL</span>090-9778-7388</div>
+        <div><span class="label">MAIL</span>matsuzaki@arionaut.com</div>
+        <div><span class="label">WEB</span>https://arionaut.com</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- =========================================== 裏面（QR＋事業内容） -->
+<p class="sheet-label">裏面 — QR＋事業内容 / 91×55mm + 塗り足し3mm</p>
+<div class="card back">
+  <div class="bg"></div>
+  <div class="guide"></div>
+  <div class="trim">
+    <div class="inner">
+
+      <div class="brand-row">
+        <svg class="mark" viewBox="0 0 300 230" role="img" aria-label="Arionaut">
+          <polyline points="24,196 74,148 108,168" stroke="#ffffff" stroke-width="13" fill="none" stroke-linejoin="miter" stroke-miterlimit="12" opacity="0.75"/>
+          <polygon points="52,182 226,38 132,148" fill="#ffffff"/>
+          <polygon points="132,148 226,38 168,186 140,158" fill="#cfe4f7"/>
+          <polygon points="267,2 271.5,14.5 284,19 271.5,23.5 267,36 262.5,23.5 250,19 262.5,14.5" fill="#f8b64d"/>
+        </svg>
+        <span class="en">ARIONAUT LLC</span>
+      </div>
+
+      <div class="body">
+        <div class="copy">
+          <p class="slogan">新しい&ldquo;航路&rdquo;を拓く</p>
+          <div class="slogan-rule"></div>
+          <p class="tagline">要件定義から運用まで、<br>業務改善とAI活用を一貫して担います。</p>
+          <ul class="pillars">
+            <li>業務改善</li>
+            <li>AI活用</li>
+            <li>受託開発</li>
+          </ul>
+        </div>
+
+        <div class="qr">
+          <div class="panel">
+            <!-- segno 生成 / v3・誤り訂正Q・クワイエットゾーン4モジュール内包
+                 デコード検証済み → https://arionaut.com/ -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" shape-rendering="crispEdges" role="img" aria-label="https://arionaut.com/">
+              <path fill="#fff" d="M0 0h37v37h-37z"/>
+              <path stroke="#0c3a86" d="M4 4.5h7m1 0h2m1 0h1m3 0h4m3 0h7m-29 1h1m5 0h1m2 0h1m1 0h2m2 0h1m1 0h1m4 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m2 0h3m1 0h3m3 0h1m2 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h4m1 0h1m3 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h1m1 0h6m1 0h2m2 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m3 0h1m1 0h1m3 0h2m1 0h1m2 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-18 1h4m1 0h3m-17 1h1m1 0h3m1 0h3m3 0h2m2 0h1m1 0h2m3 0h1m2 0h1m-29 1h1m1 0h2m3 0h1m3 0h5m2 0h2m1 0h2m2 0h1m2 0h1m-29 1h2m1 0h1m2 0h2m3 0h3m1 0h1m1 0h2m1 0h1m2 0h1m1 0h4m-29 1h4m1 0h1m3 0h6m2 0h1m1 0h1m1 0h3m3 0h1m-27 1h2m1 0h9m4 0h1m4 0h2m1 0h1m-26 1h2m1 0h1m4 0h2m1 0h1m1 0h2m1 0h1m1 0h1m1 0h4m3 0h2m-29 1h1m2 0h2m1 0h2m1 0h5m3 0h1m3 0h1m1 0h1m2 0h3m-29 1h3m1 0h1m2 0h4m1 0h3m1 0h2m1 0h1m2 0h2m3 0h2m-29 1h1m1 0h1m2 0h2m1 0h2m4 0h1m1 0h2m2 0h3m2 0h1m1 0h1m-26 1h1m5 0h1m1 0h1m2 0h4m2 0h1m1 0h2m4 0h2m-29 1h1m1 0h2m1 0h3m6 0h5m2 0h1m3 0h4m-28 1h1m3 0h1m1 0h2m1 0h3m5 0h1m1 0h1m1 0h1m1 0h1m-25 1h1m2 0h1m2 0h1m1 0h2m1 0h1m1 0h3m2 0h8m1 0h2m-21 1h3m1 0h1m3 0h2m1 0h2m3 0h1m2 0h2m-29 1h7m3 0h3m1 0h1m1 0h1m2 0h2m1 0h1m1 0h1m1 0h3m-29 1h1m5 0h1m1 0h2m2 0h4m1 0h2m1 0h1m3 0h1m3 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m3 0h2m2 0h1m3 0h6m1 0h1m-28 1h1m1 0h3m1 0h1m3 0h1m2 0h1m2 0h1m3 0h2m2 0h1m-25 1h1m1 0h3m1 0h1m1 0h1m1 0h4m1 0h1m1 0h1m1 0h1m3 0h2m1 0h1m1 0h1m-29 1h1m5 0h1m2 0h1m2 0h1m5 0h3m1 0h2m1 0h1m1 0h1m-28 1h7m3 0h2m1 0h4m1 0h1m1 0h3m1 0h1m2 0h2"/>
+            </svg>
+          </div>
+          <div class="url">arionaut.com</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================================================ 画面のみの補足 -->
+<div class="note">
+  <h2>入稿メモ</h2>
+  <ul>
+    <li>仕上がり 91×55mm、塗り足し各辺3mm（データは97×61mm）。赤い破線＝仕上がり線、青い破線＝安全余白4mm。どちらも印刷では出力されません。</li>
+    <li>PDF 化: Chrome で <code>⌘P</code> → 送信先「PDFに保存」→ 用紙サイズ「カスタム 97×61mm」（無ければ詳細設定で余白なし）→「背景のグラフィック」に必ずチェック。1ページ目が表、2ページ目が裏。</li>
+    <li>入稿前にフォントのアウトライン化が必要な印刷所が多いので、PDF を Illustrator 等で開いて「アウトラインを作成」を実行してください。</li>
+    <li>QR は誤り訂正レベル Q・29モジュール（v3）。18mm 配置で1モジュール約0.49mm（一般的な下限0.4mmを満たす）。デコード検証済み（https://arionaut.com/）。白パネルを縮めるとクワイエットゾーンが欠けて読めなくなるため、サイズは変えても白地の余白は残してください。</li>
+    <li>色数を抑えたい場合は裏面のグラデーションを <code>--navy</code> の単色に、表面右端の帯を削るとコストが下がります。</li>
+  </ul>
+</div>
+
+</body>
+</html>
