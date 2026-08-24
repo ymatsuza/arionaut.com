@@ -1,6 +1,6 @@
 # arionaut.com
 
-Arionaut合同会社（ARIONAUT LLC）のコーポレートサイトとブランド資産。
+アリオノート合同会社（ARIONAUT LLC）のコーポレートサイトとブランド資産。
 
 - 本番: https://arionaut.com/ （GitHub Pages、`main` ブランチのルートを配信）
 - ビルド工程なし。静的HTML/CSSのみ。
@@ -62,6 +62,9 @@ for s in 180 192 512; do rsvg-convert -w $s -h $s assets/favicon.svg -o assets/i
 
 ## 確定事項（2026-08-24）
 
+- **商号**: 「**アリオノート合同会社**」— カタカナ表記で登記する方針（英文 ARIONAUT LLC、ドメインと
+  ロゴのワードマーク `ARIONAUT` は変更なし）
+- **タグライン**: `EXPLORE, INNOVATE, DISCOVER`。ロゴからは商号表記を外し、タグラインに差し替えた
 - **問い合わせ先**: `info@arionaut.com`（Google Workspace で `matsuzaki@arionaut.com` とあわせて開設予定）
 - **スローガン**: 「新しい“道”を拓く」で確定。PATHFINDER LABS 時代からの継承で、「航路」案は不採用
 - **設立**: 2027年1月4日（予定）のまま据え置き
@@ -73,3 +76,5 @@ for s in 180 192 512; do rsvg-convert -w $s -h $s assets/favicon.svg -o assets/i
   Google Workspace 側の設定後に MX を追加すること（→ `docs/DNS.md` §4）
 - pf-labs.org の停止手順。**DNS レコードを先に削除してから** Pages / リポジトリを畳むこと
   （逆順だと dangling DNS で乗っ取られる。→ `docs/DNS.md` §5）
+- 商標の**称呼検索は「アリオナウト」で実施済み**。読みを「アリオノート」に確定したため、
+  J-PlatPat の称呼検索をこの読みで再実施すること

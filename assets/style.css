@@ -61,12 +61,13 @@ header{
   background-clip: text;
   color: transparent;
 }
-.nav .brand .word-ja{
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: .34em;
+.nav .brand .word-tag{
+  font-family: var(--en);
+  font-size: 7px;
+  font-weight: 600;
+  letter-spacing: .12em;
   color: var(--mid);
-  margin-top: 2px;
+  margin-top: 3px;
 }
 .nav ul{
   display: flex;
@@ -82,7 +83,7 @@ header{
 @media (max-width: 640px){
   .nav ul{ gap: 14px; }
   .nav ul a{ font-size: 12.5px; }
-  .nav .brand .word-ja{ display: none; }
+  .nav .brand .word-tag{ display: none; }
   .nav ul li:nth-child(3){ display: none; }
 }
 
