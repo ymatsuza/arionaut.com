@@ -39,14 +39,16 @@ BUMP OF CHICKEN 関連の造語。**Arion（アリオン: 神話の駿馬・名�
 - **代表社員**: 松崎 雄太（Yuta Matsuzaki）
 - **所在地**: 〒300-2635 茨城県つくば市東光台3-21-7
 - **TEL**: 090-9778-7388
-- **問い合わせ先メール**: `info@arionaut.com`（2026-08-25 確定。Google Workspace で開設予定、MX は未設定）
+- **メールアドレス**: 問い合わせ先 `info@arionaut.com` / 名刺記載は `matsuzaki@arionaut.com`
+  （2026-08-25 確定。Google Workspace で2つとも開設予定、MX は未設定）
 - **事業3本柱**: 業務改善 / AI活用 / 受託開発（現行 pf-labs.org と同一）
 - **設立予定日**: 2027年1月4日（現行サイト記載を引き継ぎ）
 
 ## 3. 仮置き（ユーザー確認が必要）
 
-1. ~~**メールアドレス** `matsuzaki@arionaut.com`~~ — **確定**（2026-08-25）。
-   問い合わせ先は `info@arionaut.com`。Google Workspace で設定予定（MX 追加は §6-3 の残タスク）
+1. ~~**メールアドレス**~~ — **確定**（2026-08-25）。サイト・プライバシーポリシーの問い合わせ先は
+   `info@arionaut.com`、名刺の MAIL 欄は `matsuzaki@arionaut.com`。Google Workspace で設定予定
+   （MX 追加は §6-3 の残タスク）
 2. ~~**スローガン** 「新しい“航路”を拓く」への変更提案~~ — **不採用**（2026-08-25 確定）。
    スローガンは「新しい“道”を拓く」で確定。名刺裏面とサイト hero の2箇所とも確定表記
 3. **サブテキスト** ロゴロックアップの「GENERATIVE DESIGN」および
@@ -142,7 +144,7 @@ BUMP OF CHICKEN 関連の造語。**Arion（アリオン: 神話の駿馬・名�
    - 会社実印の彫り直し、freee会社設立で書類再生成（Drive旧フォルダに freee のスクショあり）
 3. **ドメイン整備**
    - arionaut.jp の取得推奨（先取りリスク回避）。co.jp は登記完了後に取得可
-   - arionaut.com の DNS / メール（MX）設定 — Google Workspace を契約して `info@arionaut.com` を開設
+   - arionaut.com の DNS / メール（MX）設定 — Google Workspace を契約して `info@` / `matsuzaki@` を開設
 4. **サイトのデプロイ** — index.html は静的1ファイル。Cloudflare Pages / GitHub Pages 等で
    arionaut.com に公開。favicon・OGP画像・プライバシーポリシーページ（footerリンクが `#` のまま）が未作成
 5. **商標出願** — 「Arionaut」を42類（＋できれば9類）で出願（特許庁へ直接なら出願料12,000円＋区分加算）。
