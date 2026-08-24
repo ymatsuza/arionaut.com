@@ -24,8 +24,8 @@
   --bleed:  3mm;
   --safe:   4mm;       /* 仕上がり線からの安全余白 */
 
-  --jp: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium",
-        "Yu Gothic", "Noto Sans JP", "Meiryo", sans-serif;
+  --jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+        "Yu Gothic Medium", "Yu Gothic", "Meiryo", sans-serif;
   --en: "Helvetica Neue", "Arial", "Noto Sans", sans-serif;
 }
 
@@ -135,12 +135,14 @@ body{
   margin-bottom: 1.2mm;
 }
 .person .name{
-  font-size: 14pt;
-  font-weight: 600;
-  letter-spacing: .1em;
+  font-size: 15pt;
+  font-weight: 500;
+  letter-spacing: .12em;
   color: var(--ink);
   line-height: 1;
 }
+/* 姓と名の間（半角スペースだと詰まって見えるため実寸で確保） */
+.person .name .sp{ display: inline-block; width: 0.55em; }
 .person .romaji{
   font-family: var(--en);
   font-size: 5.6pt;
@@ -189,12 +191,21 @@ body{
   gap: 2.2mm;
 }
 .back .brand-row .mark{ width: 9.5mm; flex: none; display: block; }
+.back .brand-row .names{ display: flex; flex-direction: column; gap: 0.6mm; }
 .back .brand-row .en{
   font-family: var(--en);
   font-size: 5.6pt;
   font-weight: 600;
   letter-spacing: .2em;
   color: rgba(255,255,255,.9);
+  line-height: 1.1;
+}
+.back .brand-row .ja{
+  font-size: 5.2pt;
+  font-weight: 400;
+  letter-spacing: .1em;
+  color: rgba(255,255,255,.72);
+  line-height: 1.1;
 }
 
 .back .body{
@@ -363,7 +374,7 @@ body{
       <div class="person">
         <div class="rule"></div>
         <div class="title">代表社員</div>
-        <div class="name">松崎 雄太</div>
+        <div class="name">松崎<span class="sp"></span>雄太</div>
         <div class="romaji">Yuta Matsuzaki</div>
       </div>
 
@@ -393,7 +404,10 @@ body{
           <polygon points="132,148 226,38 168,186 140,158" fill="#cfe4f7"/>
           <polygon points="267,2 271.5,14.5 284,19 271.5,23.5 267,36 262.5,23.5 250,19 262.5,14.5" fill="#f8b64d"/>
         </svg>
-        <span class="en">ARIONAUT LLC</span>
+        <span class="names">
+          <span class="en">ARIONAUT LLC</span>
+          <span class="ja">アリオノート合同会社</span>
+        </span>
       </div>
 
       <div class="body">

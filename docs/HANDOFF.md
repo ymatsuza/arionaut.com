@@ -45,8 +45,8 @@ BUMP OF CHICKEN 関連の造語。**Arion（アリオン: 神話の駿馬・名�
 ## 3. 仮置き（ユーザー確認が必要）
 
 1. **メールアドレス** `matsuzaki@arionaut.com` — 仮。ドメイン側のメール設定は未実施
-2. **スローガン** 「新しい“航路”を拓く」 — 旧「新しい“道”を拓く」からの変更提案（未承認）。
-   名刺裏面とサイト hero の2箇所に使用中。戻す場合は両方を修正
+2. ~~**スローガン** 「新しい“航路”を拓く」への変更提案~~ — **不採用**（2026-08-25 確定）。
+   スローガンは「新しい“道”を拓く」で確定。名刺裏面とサイト hero の2箇所とも確定表記
 3. **サブテキスト** ロゴロックアップの「GENERATIVE DESIGN」および
    タグライン「NAVIGATE. DESIGN. DISCOVER.」はドラフト
    （※事業内容は現行サイトでは業務改善/AI活用/受託開発。「GENERATIVE DESIGN」表記は
@@ -155,5 +155,7 @@ BUMP OF CHICKEN 関連の造語。**Arion（アリオン: 神話の駿馬・名�
 
 - QR再生成: `python3 -c "import segno; segno.make('https://arionaut.com/', error='q').save('qr.svg', border=4, dark='#0c3a86', light='#ffffff', omitsize=True)"`
 - 名刺PDF再生成: Chromium系で `arionaut-namecard.html` を開き印刷 → 用紙カスタム97×61mm・余白なし・背景グラフィックON（Playwrightなら `page.pdf(prefer_css_page_size=True, print_background=True)`）
-- 名刺・サイトとも外部依存は Google Fonts のみ（サイトのみ使用。名刺はシステムフォント）
+- サイトの外部依存は Google Fonts のみ。名刺は @font-face を使わずローカルフォント参照
+  （和文 `Noto Sans JP` → 無い環境では Hiragino Kaku Gothic ProN 等にフォールバック）。
+  書き出し済み PDF は和文グリフを Type3 ベクタとして埋め込むので、入稿先にフォントは不要
 - 旧名刺 `PATHFINDER_LABS/namecard/namecard.html` が構造の原型。同じCSS変数名・クラス設計を踏襲している
