@@ -1,6 +1,6 @@
 # arionaut.com を GitHub Pages に向ける（DNS設定手順）
 
-> レジストラ: お名前.com（2026-08-24 時点で権威DNSは `dns1.onamae.com` / `dns2.onamae.com`）
+> レジストラ: お名前.com（2026-08-24 時点で権威DNSは `01.dnsv.jp` 〜 `04.dnsv.jp`＝お名前.comのDNSサービス）
 > 公開方針: **apex（arionaut.com）を正**、`www` は GitHub 側で apex に自動リダイレクト
 
 ## 0. 現状（2026-08-24 実測）
@@ -8,7 +8,7 @@
 ```
 $ dig +short arionaut.com A        → 150.95.255.38   （お名前.com の初期ページ）
 $ dig +short www.arionaut.com      → 150.95.255.38
-$ dig +short arionaut.com NS       → dns1.onamae.com. / dns2.onamae.com.
+$ dig +short arionaut.com NS       → 01.dnsv.jp. 〜 04.dnsv.jp.
 ```
 
 既存の A レコード（`150.95.255.38`）は **削除または置き換えが必要**。
@@ -91,3 +91,31 @@ MX は上記の A/AAAA/CNAME とは独立なので、Pages の設定と競合し
 将来この GitHub Pages サイトを閉じる場合は、**先に DNS レコードを削除してから**
 リポジトリ／Pages 設定を消すこと。逆順にすると、第三者が同名のリポジトリで
 `arionaut.com` を乗っ取れる状態が一時的に生じる。
+
+---
+
+## 6. 切替結果（2026-08-24 実測）
+
+権威DNS `01.dnsv.jp` 直問い合わせ・Google Public DNS ともに反映を確認。
+
+```
+$ dig +short @01.dnsv.jp arionaut.com A      → 185.199.108-111.153
+$ dig +short @01.dnsv.jp arionaut.com AAAA   → 2606:50c0:8000-8003::153
+$ dig +short @01.dnsv.jp www.arionaut.com CNAME → ymatsuza.github.io.
+```
+
+Let's Encrypt 証明書は DNS 反映から約 1 分で発行された（想定の最大24hより大幅に早い）。
+
+```
+subject=CN=arionaut.com
+issuer=C=US, O=Let's Encrypt, CN=YR1
+notBefore=Aug 24 07:45:29 2026 GMT / notAfter=Nov 22 07:45:28 2026 GMT
+SAN: DNS:arionaut.com, DNS:www.arionaut.com
+```
+
+Enforce HTTPS は API で有効化済み（`PUT /repos/ymatsuza/arionaut.com/pages` の `https_enforced=true`）。
+`https://www.arionaut.com/` → `https://arionaut.com/` へ 301。
+
+> 注: 有効化直後、`http://arionaut.com/`（ルートのみ）が Fastly エッジのキャッシュに残った
+> 200 を返し続けることがある（`x-proxy-cache: MISS` / `X-Cache: HIT`）。
+> `http://arionaut.com/privacy.html` は 301 を返すので設定自体は効いている。キャッシュ失効待ち。
