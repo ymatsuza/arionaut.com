@@ -82,7 +82,8 @@ DNS が反映されると GitHub がドメイン検証を行い、Let's Encrypt 
 
 ## 4. メール（MX）について
 
-`matsuzaki@arionaut.com` は **MXレコード未設定のため現時点では受信できない**。
+`info@arionaut.com`（問い合わせ先）および `matsuzaki@arionaut.com` は
+**MXレコード未設定のため現時点では受信できない**。
 Google Workspace / Microsoft 365 等を契約したうえで、MX レコードを別途追加すること。
 MX は上記の A/AAAA/CNAME とは独立なので、Pages の設定と競合しない。
 

@@ -34,6 +34,7 @@
 | `logo-mark-compact.svg` | スピードライン省略版。おおむね48px以下 |
 | `logo-mark-white.svg` | ダーク背景用の白抜き（翼1=`#ffffff` / 翼2=`#cfe4f7` / 星=`#f8b64d`） |
 | `logo-lockup.svg` | マーク＋ワードマークの横組み。ワードマークは Montserrat 900 のテキスト要素 |
+| `logo-stack.svg` | マーク＋社名の縦組み（マークの下に `ARIONAUT` ／ オレンジのダッシュを挟んで `合同会社`）。サイトの hero とヘッダーの社名表示はこの構成に合わせている |
 
 ### ルール
 
@@ -64,6 +65,6 @@ Playwright なら `page.pdf(prefer_css_page_size=True, print_background=True)`�
 
 ## スローガン
 
-現行: **新しい“航路”を拓く**（旧 PATHFINDER LABS の「新しい“道”を拓く」からの変更案。未承認）
+**新しい“道”を拓く**（2026-08-24 確定。PATHFINDER LABS 時代からの継承。「航路」案は不採用）
 
 使用箇所: サイトの `<title>` と hero `<h1>`、`ogp.svg`、名刺裏面。変更時は全箇所を揃えること。

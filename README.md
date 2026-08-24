@@ -60,10 +60,16 @@ rsvg-convert -w 1200 -h 630 brand/ogp.svg -o assets/ogp.png
 for s in 180 192 512; do rsvg-convert -w $s -h $s assets/favicon.svg -o assets/icon-$s.png; done
 ```
 
+## 確定事項（2026-08-24）
+
+- **問い合わせ先**: `info@arionaut.com`（Google Workspace で `matsuzaki@arionaut.com` とあわせて開設予定）
+- **スローガン**: 「新しい“道”を拓く」で確定。PATHFINDER LABS 時代からの継承で、「航路」案は不採用
+- **設立**: 2027年1月4日（予定）のまま据え置き
+- **pf-labs.org**: 廃止する方針
+
 ## 未確定・TODO
 
-- `matsuzaki@arionaut.com` は仮。arionaut.com のMXレコード未設定のため**現時点では受信できない**
-- スローガン「新しい“航路”を拓く」は旧「新しい“道”を拓く」からの変更案（未承認）。
-  変更する場合は `index.html` の `<title>` / hero `<h1>`、`brand/ogp.svg`（→`assets/ogp.png` 再生成）、
-  名刺裏面の3箇所を直す
-- pf-labs.org からの移行方針（リダイレクト／併存）は未決定
+- arionaut.com の **MXレコードが未設定**のため、`info@` / `matsuzaki@` とも現時点では受信できない。
+  Google Workspace 側の設定後に MX を追加すること（→ `docs/DNS.md` §4）
+- pf-labs.org の停止手順。**DNS レコードを先に削除してから** Pages / リポジトリを畳むこと
+  （逆順だと dangling DNS で乗っ取られる。→ `docs/DNS.md` §5）
