@@ -26,6 +26,7 @@ brand/
   logo-lockup.svg         マーク＋ワードマークのロックアップ
   ogp.svg                 OGP画像のソース
   qr-navy.svg / .png      QRコード（https://arionaut.com/ 宛）
+  png/                    ロゴ各種のPNG書き出し（SVGの4倍解像度・背景透過）
   namecard/               名刺入稿データ（HTML / PDF）
   BRAND.md                デザイントークン・使用ルール
 docs/
@@ -58,6 +59,13 @@ rsvg-convert -w 1200 -h 630 brand/ogp.svg -o assets/ogp.png
 
 # ファビコン
 for s in 180 192 512; do rsvg-convert -w $s -h $s assets/favicon.svg -o assets/icon-$s.png; done
+
+# ロゴのPNG書き出し（Montserrat が必要。brew install --cask font-montserrat）
+rsvg-convert -w 1200 -h 920  brand/logo-mark.svg         -o brand/png/logo-mark.png
+rsvg-convert -w 1200 -h 920  brand/logo-mark-compact.svg -o brand/png/logo-mark-compact.png
+rsvg-convert -w 1200 -h 920  brand/logo-mark-white.svg   -o brand/png/logo-mark-white.png
+rsvg-convert -w 2224 -h 560  brand/logo-lockup.svg       -o brand/png/logo-lockup.png
+rsvg-convert -w 2240 -h 1720 brand/logo-stack.svg        -o brand/png/logo-stack.png
 ```
 
 ## 確定事項（2026-08-24）
