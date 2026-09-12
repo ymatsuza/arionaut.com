@@ -75,7 +75,7 @@ rsvg-convert -w 2240 -h 1720 brand/logo-stack.svg        -o brand/png/logo-stack
 - **タグライン**: `EXPLORE, INNOVATE, DISCOVER`。ロゴからは商号表記を外し、タグラインに差し替えた
 - **メール**: 問い合わせ先 `info@arionaut.com` / 名刺記載 `matsuzaki@arionaut.com`（2026-08-25 確定。Google Workspace で開設予定）
 - **スローガン**: 「新しい“道”を拓く」で確定。PATHFINDER LABS 時代からの継承で、「航路」案は不採用
-- **設立**: 2027年1月4日（予定）のまま据え置き
+- **設立**: 2027年6月1日（予定）※2026-09-12 に 2027年1月4日から変更
 - **pf-labs.org**: 廃止する方針
 
 ## 未確定・TODO
